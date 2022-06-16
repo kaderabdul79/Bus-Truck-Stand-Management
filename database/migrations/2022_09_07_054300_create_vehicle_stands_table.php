@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('Remark')->nullable();
             $table->integer('Charge')->nullable();
             $table->boolean('Status')->default(false);
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
