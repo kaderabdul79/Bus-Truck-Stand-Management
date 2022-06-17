@@ -64,7 +64,7 @@
     <div class="container my-5">
         <div class="row my-5">
             <form class="d-flex my-5" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search by name or mobile number" aria-label="Search">
                 <button class="btn btn-outline-success search" type="submit">Search</button>
             </form>
         </div>

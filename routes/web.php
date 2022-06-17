@@ -12,5 +12,23 @@ Route::get('/search', function () {
 })->name('CheckStandReceipt');
 
 Route::get('/admin', function () {
-    return "admin";
+    return view('backend.master');
 })->name('admin');
+
+Route::get('/admin', function () {
+    return view('backend.master');
+})->name('admin');
+
+Route::get('/dashboard', function () {
+    return view('backend.dashboard');
+})->name('dashboard');
+
+Route::get('/bus-truck-entry-form', function () {
+    return view('backend.bus-truck-entry-form');
+})->name('entry-form');
+
+Route::get('/manage-buses-entry', function () {
+    return view('backend.manage-buses-entry');
+})->name('manage-buses-entry');
+
+// bus-truck-entry-form
