@@ -15,6 +15,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-
+        // insert data users tbl
+        $users = [
+            ['name' => 'alam','email'=>'alam@gmail.com','password'=>12345678,'is_admin'=>true],
+            ['name' => 'tanvir','email'=>'tanvir@gmail.com','password'=>12345678,'is_admin'=>false]
+        ];
+        User::insert($users);
     }
 }
