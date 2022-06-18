@@ -8,7 +8,7 @@
                 <div class="card easion-card">
                     <div class="card-header">
                         <div class="easion-card-icon">
-                            <i class="fas fa-chart-bar"></i>
+                            <i class="fas fa-plus"></i>
                         </div>
                         <div class="easion-card-title"> Add Bus/Truck Entry </div>
                     </div>
