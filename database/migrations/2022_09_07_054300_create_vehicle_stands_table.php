@@ -18,13 +18,12 @@ return new class extends Migration
             $table->integer('ParkingNumber')->nullable();
             $table->string('VehicleType');
             $table->string('DriverName');
-            $table->bigInteger('Drivermobilenumber');
+            $table->bigInteger('DriverMobilenumber');
             $table->bigInteger('Driverlicensenumber');
-            $table->bigInteger('Vehicleregistrationnumber');
+            $table->bigInteger('VehicleRegistrationNumber');
             $table->string('Remark')->nullable();
             $table->integer('Charge')->nullable();
             $table->boolean('Status')->default(false);
-            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

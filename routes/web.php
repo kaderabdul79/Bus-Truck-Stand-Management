@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VehicleStandController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,6 +27,8 @@ Route::get('/dashboard', function () {
 Route::get('/bus-truck-entry-form', function () {
     return view('backend.bus-truck-entry-form');
 })->name('entry-form');
+
+Route::post('/bus-truck-entry-form', [VehicleStandController::class,'store'])->name('entry.store');
 
 Route::get('/manage-buses-entry', function () {
     return view('backend.manage-buses-entry');
