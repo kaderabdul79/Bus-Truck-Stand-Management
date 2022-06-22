@@ -9,6 +9,15 @@ use Illuminate\Support\Facades\Validator;
 
 class VehicleStandController extends Controller
 {
+    
+    // fetching all vehicle detail's
+    public function index(){
+        $VehicleStandDetails = VehicleStand::all();
+        // return $VehicleStandDetails;
+        return view('backend.manage-buses-entry',compact('VehicleStandDetails'));
+    }
+
+    // insert new vehicle entry
     public function store(Request $req){
         // validating the incoming new Vehicle Entry Info.
         $validation = Validator::make($req->all(),[

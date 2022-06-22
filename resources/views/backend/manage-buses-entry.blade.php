@@ -11,37 +11,37 @@
                         <div class="easion-card-icon">
                             <i class="fas fa-table"></i>
                         </div>
-                        <div class="easion-card-title">Default table</div>
+                        <div class="easion-card-title">Manage Buses/Trucks Entry Details                        </div>
                     </div>
                     <div class="card-body ">
                         <table class="table table-in-card">
                             <thead>
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
+                                    <th scope="col">S.NO</th>
+                                    <th scope="col">Parking Number</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Driver Name</th>
+                                    <th scope="col">Entry Date</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                                @foreach ($VehicleStandDetails as $vehicle)
+                                    <tr>
+                                        <th scope="row">{{$vehicle->id}}</th>
+                                        <td>{{$vehicle->ParkingNumber}}</td>
+                                        <td>{{$vehicle->VehicleType}}</td>
+                                        <td>{{$vehicle->DriverName}}</td>
+                                        <td>{{$vehicle->created_at->format('Y-m-d')}}</td>
+                                        <td>{{$vehicle->Status == 0 ? "$vehicle->VehicleType Out" : "$vehicle->VehicleType In"}}</td>
+                                        <td>
+                                            <a href="" type="submit" class="btn btn-primary btn-sm">Print</a>
+                                            <a href="" type="submit" class="btn btn-warning btn-sm">Edit</a>
+                                            <a href="" type="submit" class="btn btn-danger btn-sm">Delete</a>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

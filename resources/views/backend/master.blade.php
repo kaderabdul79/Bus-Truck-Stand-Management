@@ -36,7 +36,7 @@
                         <a href="{{route('manage-buses-entry')}}" class="dash-nav-dropdown-item">Trucks</a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="{{route('manage-buses-entry')}}" class="dash-nav-dropdown-item">All</a>
+                        <a href="{{route('vehicles.index')}}" class="dash-nav-dropdown-item">All</a>
                     </div>
                     <a href="{{route('entry-form')}}" class="dash-nav-item">
                         <i class="fas fa-copy"></i>Between Date Reports</a>

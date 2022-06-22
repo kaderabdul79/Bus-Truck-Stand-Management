@@ -34,4 +34,5 @@ Route::get('/manage-buses-entry', function () {
     return view('backend.manage-buses-entry');
 })->name('manage-buses-entry');
 
+Route::get('/vehicles',[VehicleStandController::class,'index'])->name('vehicles.index');
 // bus-truck-entry-form
