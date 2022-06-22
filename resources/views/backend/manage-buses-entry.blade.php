@@ -11,7 +11,7 @@
                         <div class="easion-card-icon">
                             <i class="fas fa-table"></i>
                         </div>
-                        <div class="easion-card-title">Manage Buses/Trucks Entry Details                        </div>
+                        <div class="easion-card-title">Manage Buses/Trucks Entry Details</div>
                     </div>
                     <div class="card-body ">
                         <table class="table table-in-card">
@@ -36,9 +36,11 @@
                                         <td>{{$vehicle->created_at->format('Y-m-d')}}</td>
                                         <td>{{$vehicle->Status == 0 ? "$vehicle->VehicleType Out" : "$vehicle->VehicleType In"}}</td>
                                         <td>
-                                            <a href="" type="submit" class="btn btn-primary btn-sm">Print</a>
-                                            <a href="" type="submit" class="btn btn-warning btn-sm">Edit</a>
-                                            <a href="" type="submit" class="btn btn-danger btn-sm">Delete</a>
+                                            <form action="{{route('vehicles.destroy',$vehicle->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach

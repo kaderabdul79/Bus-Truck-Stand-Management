@@ -42,4 +42,12 @@ class VehicleStandController extends Controller
         Session::flash('success','new entry successfully inserted');
         return back();
     }
+
+    // delete vehicle information in this specific id.
+    public function destroy($id){
+        $vehicle_id = VehicleStand::find($id);
+        $vehicle_id->delete();
+        return redirect()->route('entry-form')
+                        ->with('success','Vehicle Info. deleted successfully');
+    }
 }

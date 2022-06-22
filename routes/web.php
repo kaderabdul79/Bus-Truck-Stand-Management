@@ -35,4 +35,4 @@ Route::get('/manage-buses-entry', function () {
 })->name('manage-buses-entry');
 
 Route::get('/vehicles',[VehicleStandController::class,'index'])->name('vehicles.index');
-// bus-truck-entry-form
+Route::delete('/vehicles/{id}',[VehicleStandController::class,'destroy'])->name('vehicles.destroy');
