@@ -9,12 +9,15 @@ use Illuminate\Support\Facades\Validator;
 
 class VehicleStandController extends Controller
 {
-    
+    // show the entry from
+    public function create(){
+        return view('backend.create');
+    }
+
     // fetching all vehicle detail's
     public function index(){
         $VehicleStandDetails = VehicleStand::all();
-        // return $VehicleStandDetails;
-        return view('backend.manage-buses-entry',compact('VehicleStandDetails'));
+        return view('backend.manage',compact('VehicleStandDetails'));
     }
 
     // insert new vehicle entry
@@ -43,11 +46,36 @@ class VehicleStandController extends Controller
         return back();
     }
 
+    // edit vehicle entry Info.
+    public function edit($id){
+        $vehicle_info = VehicleStand::find($id);
+        return view('backend.edit')->with('vehicle_info',$vehicle_info);
+    }
+
+    // update vehicle entry Info.
+    public function update(Request $req,$id){
+        // validating the incoming Vehicle nfo to update.
+        $validation = Validator::make($req->all(),[
+            'VehicleType' => 'required',
+            'DriverMobileNumber' => 'required|min:8|max:11',
+            'DriverName' => 'required',
+            'VehicleRegistrationNumber' => 'required|min:6',
+            'DriverLicenseNumber' => 'required|min:3|max:8'  
+        ]);
+        if($validation->fails()){
+            return back()->with('errors',$validation->messages());
+        }
+        $vehicle_info = VehicleStand::find($id);
+        $vehicle_info->update($req->all());
+        Session::flash('success','update successfully!');
+        return back();
+    }
+
     // delete vehicle information in this specific id.
     public function destroy($id){
         $vehicle_id = VehicleStand::find($id);
         $vehicle_id->delete();
-        return redirect()->route('entry-form')
+        return redirect()->route('vehicles.create')
                         ->with('success','Vehicle Info. deleted successfully');
     }
 }

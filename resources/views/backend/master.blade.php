@@ -24,21 +24,21 @@
             <nav class="dash-nav-list">
                 <a href="{{route('dashboard')}}" class="dash-nav-item">
                     <i class="fas fa-home"></i> Dashboard </a>
-                    <a href="{{route('entry-form')}}" class="dash-nav-item">
+                    <a href="{{route('vehicles.create')}}" class="dash-nav-item">
                         <i class="fa fa-taxi"></i> Entry new</a>
                 <div class="dash-nav-dropdown">
                     <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
                         <i class="fa fa-car"></i>Manage Bus/Truck Entry</a>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="{{route('manage-buses-entry')}}" class="dash-nav-dropdown-item">Buses</a>
+                        <a href="{{route('manage')}}" class="dash-nav-dropdown-item">Buses</a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="{{route('manage-buses-entry')}}" class="dash-nav-dropdown-item">Trucks</a>
+                        <a href="{{route('manage')}}" class="dash-nav-dropdown-item">Trucks</a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
                         <a href="{{route('vehicles.index')}}" class="dash-nav-dropdown-item">All</a>
                     </div>
-                    <a href="{{route('entry-form')}}" class="dash-nav-item">
+                    <a href="{{route('vehicles.create')}}" class="dash-nav-item">
                         <i class="fas fa-copy"></i>Between Date Reports</a>
                 </div>
             </nav>

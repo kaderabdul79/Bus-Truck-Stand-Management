@@ -24,15 +24,15 @@ Route::get('/dashboard', function () {
     return view('backend.dashboard');
 })->name('dashboard');
 
-Route::get('/bus-truck-entry-form', function () {
-    return view('backend.bus-truck-entry-form');
-})->name('entry-form');
+Route::get('/vehicles/create', [VehicleStandController::class,'create'])->name('vehicles.create');
 
-Route::post('/bus-truck-entry-form', [VehicleStandController::class,'store'])->name('entry.store');
+Route::post('/vehicles', [VehicleStandController::class,'store'])->name('vehicles.store');
 
-Route::get('/manage-buses-entry', function () {
-    return view('backend.manage-buses-entry');
-})->name('manage-buses-entry');
+Route::get('/manage', function () {
+    return view('backend.manage');
+})->name('manage');
 
 Route::get('/vehicles',[VehicleStandController::class,'index'])->name('vehicles.index');
 Route::delete('/vehicles/{id}',[VehicleStandController::class,'destroy'])->name('vehicles.destroy');
+Route::get('/vehicles/{id}/edit',[VehicleStandController::class,'edit'])->name('vehicles.edit');
+Route::put('/vehicles/{id}',[VehicleStandController::class,'update'])->name('vehicles.update');

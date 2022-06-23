@@ -13,7 +13,7 @@
                         <div class="easion-card-title"> Add Bus/Truck Entry </div>
                     </div>
                     <div class="card-body ">
-                        <form action="{{route('entry.store')}}" method="POST">
+                        <form action="{{route('vehicles.store')}}" method="POST">
                             @csrf
                             @if(session('success'))
                                 <div class="alert alert-success">{{session('success')}}</div>
