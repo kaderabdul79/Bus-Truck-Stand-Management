@@ -3,7 +3,7 @@
 @section('content')
 <main class="dash-content">
     <div class="container-fluid">
-        <h1 class="dash-title">Manage Bus Entry Details</h1>
+        <h1 class="dash-title">Manage Trucks Entry Details</h1>
         <div class="row">
             <div class="col-lg-12">
                 <div class="card easion-card">
@@ -11,7 +11,7 @@
                         <div class="easion-card-icon">
                             <i class="fas fa-table"></i>
                         </div>
-                        <div class="easion-card-title">Manage Buses/Trucks Entry Details</div>
+                        <div class="easion-card-title">Manage Trucks Entry Details</div>
                     </div>
                     <div class="card-body ">
                         <table class="table table-in-card">

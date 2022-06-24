@@ -38,5 +38,7 @@ Route::get('/vehicles/{id}/edit',[VehicleStandController::class,'edit'])->name('
 Route::put('/vehicles/{id}',[VehicleStandController::class,'update'])->name('vehicles.update');
 
 
-// manageBuses
+// manageTrucks
 Route::get('/vehicles/manage/buses', [VehicleStandController::class,'manageBuses'])->name('vehicles.buses');
+// manageBuses
+Route::get('/vehicles/manage/trucks', [VehicleStandController::class,'manageTrucks'])->name('vehicles.trucks');

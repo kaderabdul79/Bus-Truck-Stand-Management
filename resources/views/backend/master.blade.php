@@ -33,7 +33,7 @@
                         <a href="{{route('vehicles.buses')}}" class="dash-nav-dropdown-item">Buses</a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="{{route('manage')}}" class="dash-nav-dropdown-item">Trucks</a>
+                        <a href="{{route('vehicles.trucks')}}" class="dash-nav-dropdown-item">Trucks</a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
                         <a href="{{route('vehicles.index')}}" class="dash-nav-dropdown-item">All</a>

@@ -80,10 +80,18 @@ class VehicleStandController extends Controller
     }
 
     
-    // fetching all vehicle detail's
+    // fetching all buses detail's specifically
     public function manageBuses(){
         $VehicleStandDetails = VehicleStand::where('VehicleType','=','bus')
                                 ->select('id','VehicleType','ParkingNumber','DriverName','created_at','Status')->get();
-        return view('backend.manage',compact('VehicleStandDetails'));
+        return view('backend.manage-buses',compact('VehicleStandDetails'));
     }
+
+    // fetching all buses detail's specifically
+    public function manageTrucks(){
+        $VehicleStandDetails = VehicleStand::where('VehicleType','=','truck')
+                                ->select('id','VehicleType','ParkingNumber','DriverName','created_at','Status')->get();
+        return view('backend.manage-trucks',compact('VehicleStandDetails'));
+    }
+
 }

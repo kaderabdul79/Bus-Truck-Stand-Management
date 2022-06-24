@@ -38,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Driver Mobile Number</label>
-                                <input type="text" name="DriverMobileNumber" value="{{$vehicle_info->DriverMobileNumber}}" class="form-control" id="exampleFormControlInput1" placeholder="Mobile Number">
+                                <input type="text" name="DriverMobileNumber" value="{{$vehicle_info->DriverMobilenumber}}" class="form-control" id="exampleFormControlInput1" placeholder="Mobile Number">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Registration Number</label>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">License Number</label>
-                                <input type="text" name="DriverLicenseNumber" value="{{$vehicle_info->DriverLicenseNumber}}" class="form-control" id="exampleFormControlInput1" placeholder="License Number">
+                                <input type="text" name="DriverLicenseNumber" value="{{$vehicle_info->Driverlicensenumber}}" class="form-control" id="exampleFormControlInput1" placeholder="License Number">
                             </div>
                             <button type="submit" class="btn btn-primary">Edit Entry</button>
                         </form>
