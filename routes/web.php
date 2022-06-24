@@ -36,3 +36,7 @@ Route::get('/vehicles',[VehicleStandController::class,'index'])->name('vehicles.
 Route::delete('/vehicles/{id}',[VehicleStandController::class,'destroy'])->name('vehicles.destroy');
 Route::get('/vehicles/{id}/edit',[VehicleStandController::class,'edit'])->name('vehicles.edit');
 Route::put('/vehicles/{id}',[VehicleStandController::class,'update'])->name('vehicles.update');
+
+
+// manageBuses
+Route::get('/vehicles/manage/buses', [VehicleStandController::class,'manageBuses'])->name('vehicles.buses');

@@ -30,7 +30,7 @@
                     <a href="#!" class="dash-nav-item dash-nav-dropdown-toggle">
                         <i class="fa fa-car"></i>Manage Bus/Truck Entry</a>
                     <div class="dash-nav-dropdown-menu">
-                        <a href="{{route('manage')}}" class="dash-nav-dropdown-item">Buses</a>
+                        <a href="{{route('vehicles.buses')}}" class="dash-nav-dropdown-item">Buses</a>
                     </div>
                     <div class="dash-nav-dropdown-menu">
                         <a href="{{route('manage')}}" class="dash-nav-dropdown-item">Trucks</a>

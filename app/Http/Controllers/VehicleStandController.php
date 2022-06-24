@@ -78,4 +78,12 @@ class VehicleStandController extends Controller
         return redirect()->route('vehicles.create')
                         ->with('success','Vehicle Info. deleted successfully');
     }
+
+    
+    // fetching all vehicle detail's
+    public function manageBuses(){
+        $VehicleStandDetails = VehicleStand::where('VehicleType','=','bus')
+                                ->select('id','VehicleType','ParkingNumber','DriverName','created_at','Status')->get();
+        return view('backend.manage',compact('VehicleStandDetails'));
+    }
 }
