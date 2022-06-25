@@ -48,6 +48,13 @@
                                 <label for="exampleFormControlInput1">License Number</label>
                                 <input type="text" name="DriverLicenseNumber" value="{{$vehicle_info->Driverlicensenumber}}" class="form-control" id="exampleFormControlInput1" placeholder="License Number">
                             </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Status</label>
+                                <select class="form-control" name="Status" id="exampleFormControlSelect1">
+                                    <option value="1">In</option>
+                                    <option value="0">Out</option>
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-primary">Edit Entry</button>
                         </form>
                     </div>

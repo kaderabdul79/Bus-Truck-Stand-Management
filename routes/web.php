@@ -20,9 +20,7 @@ Route::get('/admin', function () {
     return view('backend.master');
 })->name('admin');
 
-Route::get('/dashboard', function () {
-    return view('backend.dashboard');
-})->name('dashboard');
+Route::get('/dashboard', [VehicleStandController::class,'countVehicles'])->name('dashboard');
 
 Route::get('/vehicles/create', [VehicleStandController::class,'create'])->name('vehicles.create');
 

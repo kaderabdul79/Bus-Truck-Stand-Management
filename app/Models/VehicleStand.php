@@ -9,5 +9,5 @@ class VehicleStand extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['VehicleType','DriverMobileNumber','DriverName','VehicleRegistrationNumber','DriverLicenseNumber'];
+    protected $fillable = ['VehicleType','DriverMobileNumber','DriverName','VehicleRegistrationNumber','DriverLicenseNumber','Status','ParkingNumber'];
 }

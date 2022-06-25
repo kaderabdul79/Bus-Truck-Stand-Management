@@ -22,8 +22,8 @@ return new class extends Migration
             $table->bigInteger('Driverlicensenumber');
             $table->bigInteger('VehicleRegistrationNumber');
             $table->string('Remark')->nullable();
-            $table->integer('Charge')->nullable();
-            $table->boolean('Status')->default(false);
+            $table->integer('Charge')->default(50)->nullable();
+            $table->boolean('Status')->default(true);
             $table->timestamps();
         });
     }

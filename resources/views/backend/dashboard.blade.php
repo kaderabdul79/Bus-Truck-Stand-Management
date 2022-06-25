@@ -6,51 +6,39 @@
         <div class="row dash-row">
             <div class="col-xl-4">
                 <div class="stats stats-primary">
-                    <h3 class="stats-title"> Sign ups </h3>
+                    <h3 class="stats-title"> Total Vehicle Entry</h3>
                     <div class="stats-content">
                         <div class="stats-icon">
-                            <i class="fas fa-user"></i>
+                            <i class="fa fa-car" style="font-size: 90px"></i>
                         </div>
                         <div class="stats-data">
-                            <div class="stats-number">114</div>
-                            <div class="stats-change">
-                                <span class="stats-percentage">+25%</span>
-                                <span class="stats-timeframe">from last month</span>
-                            </div>
+                            <div class="stats-number">{{$vehiclesCount['totalVehicle']}}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-4">
                 <div class="stats stats-primary">
-                    <h3 class="stats-title"> Sign ups </h3>
+                    <h3 class="stats-title"> Total Bus Entry</h3>
                     <div class="stats-content">
                         <div class="stats-icon">
-                            <i class="fas fa-user"></i>
+                            <i class="fa fa-bus" style="font-size: 90px"></i>
                         </div>
                         <div class="stats-data">
-                            <div class="stats-number">114</div>
-                            <div class="stats-change">
-                                <span class="stats-percentage">+25%</span>
-                                <span class="stats-timeframe">from last month</span>
-                            </div>
+                            <div class="stats-number">{{$vehiclesCount['totalBuses']}}</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-xl-4">
                 <div class="stats stats-primary">
-                    <h3 class="stats-title"> Sign ups </h3>
+                    <h3 class="stats-title"> Total Trucks Entry</h3>
                     <div class="stats-content">
                         <div class="stats-icon">
-                            <i class="fas fa-user"></i>
+                            <i class="fa fa-truck" style="font-size: 90px"></i>
                         </div>
                         <div class="stats-data">
-                            <div class="stats-number">114</div>
-                            <div class="stats-change">
-                                <span class="stats-percentage">+25%</span>
-                                <span class="stats-timeframe">from last month</span>
-                            </div>
+                            <div class="stats-number">{{$vehiclesCount['totalTrucks']}}</div>
                         </div>
                     </div>
                 </div>

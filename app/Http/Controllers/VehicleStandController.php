@@ -6,6 +6,7 @@ use App\Models\VehicleStand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class VehicleStandController extends Controller
 {
@@ -92,6 +93,20 @@ class VehicleStandController extends Controller
         $VehicleStandDetails = VehicleStand::where('VehicleType','=','truck')
                                 ->select('id','VehicleType','ParkingNumber','DriverName','created_at','Status')->get();
         return view('backend.manage-trucks',compact('VehicleStandDetails'));
+    }
+
+    // count Vehicles, and according today,last week and yesterday 
+    public function countVehicles(){
+        $totalVehicle = VehicleStand::get()->count();
+        $totalBuses = VehicleStand::where('VehicleType','=','bus')->count();
+        $totalTrucks = VehicleStand::where('VehicleType','=','truck')->count();
+
+        $vehiclesCount = [
+            'totalVehicle' => $totalVehicle,
+            'totalBuses' => $totalBuses,
+            'totalTrucks' => $totalTrucks
+        ];
+        return view('backend.dashboard',compact('vehiclesCount'));
     }
 
 }
