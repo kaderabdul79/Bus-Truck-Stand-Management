@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class VehicleStandController extends Controller
 {
@@ -107,6 +108,25 @@ class VehicleStandController extends Controller
             'totalTrucks' => $totalTrucks
         ];
         return view('backend.dashboard',compact('vehiclesCount'));
+    }
+
+    // generating vehicle entry report according to the specific id
+    public function generatingPDF($id){
+        $vehicleInfo = VehicleStand::findOrFail($id);
+        // converting in array, reason loadView taking only array
+        $vehicleData = [
+            'VehicleType' => $vehicleInfo->VehicleType,
+            'DriverName' => $vehicleInfo->DriverName,
+            'DriverMobileNumber' => $vehicleInfo->DriverMobileNumber,
+            'VehicleRegistrationNumber' => $vehicleInfo->VehicleRegistrationNumber,
+            'DriverLicenseNumber' => $vehicleInfo->DriverLicenseNumber,
+            'Status' => $vehicleInfo->Status,
+            'Charge' => $vehicleInfo->Charge,
+
+        ];
+
+        $pdf = Pdf::loadView('backend.vehicle-entry-report', $vehicleData);
+        return $pdf->download('vehicle-entry-report.pdf');
     }
 
 }

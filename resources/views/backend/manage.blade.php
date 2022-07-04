@@ -36,6 +36,7 @@
                                         <td>{{$vehicle->created_at}}</td>
                                         <td>{{$vehicle->Status == 0 ? "$vehicle->VehicleType Out" : "$vehicle->VehicleType In"}}</td>
                                         <td>
+                                            <a href="{{route('vehicles.print',$vehicle->id)}}" type="submit" class="btn btn-warning btn-sm">Print</a>
                                             <a href="{{route('vehicles.edit',$vehicle->id)}}" type="submit" class="btn btn-warning btn-sm">Edit</a>
                                             <form action="{{route('vehicles.destroy',$vehicle->id)}}" method="POST">
                                                 @csrf

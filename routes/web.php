@@ -40,3 +40,6 @@ Route::put('/vehicles/{id}',[VehicleStandController::class,'update'])->name('veh
 Route::get('/vehicles/manage/buses', [VehicleStandController::class,'manageBuses'])->name('vehicles.buses');
 // manageBuses
 Route::get('/vehicles/manage/trucks', [VehicleStandController::class,'manageTrucks'])->name('vehicles.trucks');
+// 
+Route::get('/vehicles/{id}/print',[VehicleStandController::class,'generatingPDF'])->name('vehicles.print');
+
