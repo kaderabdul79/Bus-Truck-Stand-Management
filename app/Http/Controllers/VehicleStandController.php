@@ -24,13 +24,15 @@ class VehicleStandController extends Controller
 
     // insert new vehicle entry
     public function store(Request $req){
+        dd($req);
         // validating the incoming new Vehicle Entry Info.
         $validation = Validator::make($req->all(),[
             'VehicleType' => 'required',
             'DriverMobileNumber' => 'required|min:8|max:11',
             'DriverName' => 'required',
             'VehicleRegistrationNumber' => 'required|min:6',
-            'DriverLicenseNumber' => 'required|min:3|max:8'  
+            'DriverLicenseNumber' => 'required|min:3|max:8',
+            'parkingNumber' => 'required'
         ]);
         if($validation->fails()){
             return back()->with('errors',$validation->messages());
@@ -42,6 +44,7 @@ class VehicleStandController extends Controller
         $newEntryInfo->DriverMobileNumber = $req->DriverMobileNumber;
         $newEntryInfo->VehicleRegistrationNumber = $req->VehicleRegistrationNumber;
         $newEntryInfo->DriverLicenseNumber = $req->DriverLicenseNumber;
+        $newEntryInfo->parkingNumber = $req->parkingNumber;
         $newEntryInfo->save();
         // showing flash message
         Session::flash('success','new entry successfully inserted');
@@ -122,7 +125,7 @@ class VehicleStandController extends Controller
             'DriverLicenseNumber' => $vehicleInfo->DriverLicenseNumber,
             'Status' => $vehicleInfo->Status,
             'Charge' => $vehicleInfo->Charge,
-
+            'ParkingNumber' => $vehicleInfo->ParkingNumber,
         ];
 
         $pdf = Pdf::loadView('backend.vehicle-entry-report', $vehicleData);
